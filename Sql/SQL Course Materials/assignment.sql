@@ -50,11 +50,35 @@ USE sql_store;
 
 
 -- 		phone numbers end with 9
--- SELECT *
+-- SELECT *	
 -- FROM customers
 -- WHERE phone NOT LIKE '%9';
 
+-- Get those customers whose
+-- SELECT *
+-- FROM customers
+-- 		whose first name are ELKA or AMBUR
+ -- WHERE first_name REGEXP '^ELKA' OR first_name REGEXP '^AMBUR'
+-- 		last names end with EY or ON
+-- WHERE last_name REGEXP 'EY$|ON$'
+-- 		last names start with MY or contains SE
+-- WHERE last_name REGEXP '^MY|SE'
+-- 		Last names contains B followed by R or U
+-- WHERE last_name REGEXP 'B[RU]'
 
+
+-- SELECT * 
+-- FROM orders 
+-- WHERE shipped_date IS NULL;
+
+-- SELECT *, quantity*unit_price AS total_price
+-- FROM order_items
+-- WHERE order_id = 2
+-- ORDER BY  total_price DESC
+
+SELECT * FROM customers
+ORDER BY points DESC
+LIMIT 3;
 
 
 
