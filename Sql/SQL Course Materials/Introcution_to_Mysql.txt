@@ -1,0 +1,68 @@
+Create a database using these commands
+
+CREATE TABLE student (
+    student_id INT PRIMARY KEY,
+    name VARCHAR(20),
+    major VARCHAR(20)
+);
+
+CREATE TABLE name -> Creates a table and names it as "name"
+    student_id INT PRIMARY KEY, -> Name of the column, Datatype, and the type of key
+
+
+DROP TABLE student; will delete an entire table
+DESCRIBE student; will show the entire table
+ALTER TABLE student ADD gpa DECIMAL(); will add a column inside the table
+ ALTER TABLE student DROP COLUMN gpa(); will drop the column inside the table
+
+
+
+How to add the value inside the database table
+
+INSERT INTO student VALUES(); inside the paranthesis we can give the information for the storing the data
+INSERT INTO student VALUES(1,'Mohan','Aerospace Engineer'); // values added into the table
+
+
+
+CREATE TABLE student2 (
+    student_id INT PRIMARY KEY, // primary key is 'not null' and 'unique' combined
+    name VARCHAR(20) NOT NULL, // the value inserted cannot be NULL
+    major VARCHAR(20) UNIQUE, // the value inserted cannnot be repeated throughout the database
+);
+
+
+SELECT * FROM student; // will show the added parameters inside the table
+
+if one parameter is missing then use the command to store
+
+INSERT INTO student(student_id, name) VALUES(3, 'Aravind'); // the value in the missing table will be stored as null
+
+NOTE: You cannot duplicate the primary key
+
+
+
+CREATE TABLE student3 (
+    student_id INT PRIMARY KEY,
+    name VARCHAR(20) NOT NULL,
+    major VARCHAR(20) DEFAULT 'undecided' //  this will give out a default name if the data is not present
+);
+
+
+CREATE TABLE student4 (
+    student_id INT PRIMARY KEY AUTO_INCREMENT, // it will autoincrement the primary key 
+    name VARCHAR(20) NOT NULL,
+    major VARCHAR(20) UNIQUE 
+);
+
+INSERT INTO student4(name,major) VALUES('Mohan','Aerospace Engineer');
+
+output 
+
+SELECT * FROM student4;
+
++------------+-------+--------------------+
+| student_id | name  | major              |
++------------+-------+--------------------+
+|          1 | Kate  | Biology            |
+|          2 | Mohan | Aerospace Engineer |
++------------+-------+--------------------+
