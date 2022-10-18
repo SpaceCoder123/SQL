@@ -1,5 +1,5 @@
 -- Return all the products
-USE sql_store;
+-- USE sql_store;
 -- SELECT * FROM products;
 -- name
 -- SELECT name FROM products;
@@ -76,9 +76,20 @@ USE sql_store;
 -- WHERE order_id = 2
 -- ORDER BY  total_price DESC
 
-SELECT * FROM customers
-ORDER BY points DESC
-LIMIT 3;
+-- SELECT * FROM customers
+-- ORDER BY points DESC
+-- LIMIT 3;
 
+-- SELECT order_id, o.product_id, quantity, o.unit_price FROM order_items o
+-- INNER JOIN products ON  products.product_id  = o.product_id  
+
+
+USE sql_invoicing;
+SELECT payments.payment_id, payments.invoice_id ,payments.date, payments.client_id, clients.name, pm.name 
+-- SELECT *  
+FROM payments
+JOIN clients ON clients.client_id = payments.client_id
+JOIN payment_methods pm ON pm.payment_method_id = payments.payment_id 
+JOIN invoices inv ON inv.invoice_id = payments.invoice_id
 
 
